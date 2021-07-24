@@ -29,11 +29,11 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 
 ### My health log
 
-<img src="./readme_images/my_health_log.png">
+<img src="./readme_images/my health log.png">
 
 ### My symptom journal
 
-<img src="./readme_images/my_symptom_journal.png">
+<img src="./readme_images/my symptom journal.png">
 
 ### Appointments
 
