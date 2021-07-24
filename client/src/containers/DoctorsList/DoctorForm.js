@@ -150,4 +150,3 @@ class DoctorForm extends Component {
 }
 
 export default withStyles(styles)(DoctorForm);
-

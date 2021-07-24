@@ -4,48 +4,14 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 
 ## Table of contents
 
-* [Live](#live)
-* [Presentation](#presentation)
-* [Contributors](#contributors)
-* [Screenshots](#screenshots)
 * [About this project](#about-this-project)
   * [How the app is built](#how-the-app-is-built)
   * [Structure of the project](#project-structure)
   * [App workflow](#workflow)
-* [Getting started](#getting-started)
-* [Deploying the application](#deployment)
 * [Technologies used to create app](#technologies-used)
   * [Back end technologies](#Backend)
   * [Front end technologies](#Frontend)
 * [Direction for future development](#future)
-* [Issues](#Issues)
-
-## <a name="live"></a>Live
-
-<http://myhealthtracker.herokuapp.com/>
-
-## <a name="presentation"></a>Presentation
-<p>The app was presented at the University of Minnesota Coding Bootcamp Demo Day on May 10, 2018.</p>
-
-<p>The slides from that presentation are available <a href="https://docs.google.com/presentation/d/10fSN9kcjoPq1m--SUcrzG1SD8DN-avFuZrVtKLj7_k8/edit?usp=sharing">here</a>.</p>
-
-## <a name="contributors"></a>Contributors
-The HealthTracker app was created by a team of 4 developers at the University of Minnesota.
-
-<a href="https://github.com/2crazyflowers">Sara Bracewell</a>
-<p>Defined database architecture/models and developed data visualization charts to track height and weight measurements over time.</p>
-<br>
-
-<a href="https://github.com/kkotewall">Kayla Kotewall</a>
-<p>Developed feature that allows attachments (for example, lab reports) to be uploaded to Amazon S3 and helped implement user authentication using Passport.js.</p>
-<br>
-
-<a href="https://github.com/TowerGuy2909">Jerridd Speidel</a>
-<p>Developed user authentication using Passport.js, which ensures that a user is always authenticated when using the app and the user’s health information is protected.</p>
-<br>
-
-<a href="https://github.com/philipstubbs13/">Phil Stubbs</a>
-<p>Designed UX flow, developed UI using React, and helped managed project using GitHub task board/agile methodology.</p>
 
 ## <a name="screenshots"></a> Screenshots
 
@@ -55,7 +21,7 @@ The HealthTracker app was created by a team of 4 developers at the University of
 
 ### Sign up page
 
-<img src="./readme_images/signup2.png">
+<img src="./readme_images/signup.png">
 
 ### Home page
 
@@ -63,11 +29,11 @@ The HealthTracker app was created by a team of 4 developers at the University of
 
 ### My health log
 
-<img src="./readme_images/health_log.png">
+<img src="./readme_images/my_health_log.png">
 
 ### My symptom journal
 
-<img src="./readme_images/symptom_journal.png">
+<img src="./readme_images/my_symptom_journal.png">
 
 ### Appointments
 
@@ -88,10 +54,6 @@ The HealthTracker app was created by a team of 4 developers at the University of
 ### Charts
 
 <img src="./readme_images/charts.png">
-
-### 404 Not found page
-
-<img src="./readme_images/notfound.png">
 
 ## <a name="about-this-project"></a> About this project
 Many people visit the doctor office on a regular basis (sometimes multiple times per week) and have no way of accurately and efficiently keeping track of their health information, such as upcoming appointments, prescriptions, symptoms they experience away from the doctor office, notes from their doctors, and height and weight measurements. 
@@ -169,46 +131,8 @@ After you clone the repository, navigate to the project root directory (MedLog).
   * Allows the app to serve static content.
   * Sets up Passport, which allows the user to authenticate/log in to the app.
   * Uses Mongoose (orm) to connect to MongoDB, which allows us to have access to the MongoDB commands to perform various operations on the database.
-* <b>yarn.lock</b>: Dependency tree for the project. Lists the project dependencies and their versions.
+* <b>npm.lock</b>: Dependency tree for the project. Lists the project dependencies and their versions.
 
-## <a name="getting-started"></a> Getting started
-
-The following section will take you through the steps of setting up this app and getting it running locally on your computer.
-
-If you don't want to set up this project locally and just want to see the deployed application, go to <https://myhealthtracker.herokuapp.com/>.
-
-To set up this application locally on your computer, perform the following steps:
-  1. [Clone the repository](#clone-repository)
-  2. [Install Node.js](#install-node)
-  3. [Install the project dependencies](#dependencies)
-  4. [Install yarn](#install-yarn)
-  5. [Install MongoDB](#install-mongo)
-  6. [Start the daemon for MongoDB](#mongod)
-  7. [Start the MongoDB shell](#mongoshell)
-  8. [Install Robo 3T](#install-robo)
-  9. [Seed MongoDB](#seed)
-  10. [Start the Express server and React development server](#start-server)
-
-###  <a name="clone-repository"></a> 1. Clone the repository
-The first step is to clone the project repository to a local directory on your computer. To clone the repository, run the following commands:
-<pre>
-git clone https://github.com/philipstubbs13/MedLog.git
-cd ./MedLog
-</pre>
-
-###  <a name="install-node"></a> 2. Install Node.js
-
-<p>If you don't already have Node.js installed on your computer, you can install the latest version <a href="https://nodejs.org/en/">here</a>.</p>
-
-### <a name="install-yarn"></a> 3. Install yarn
-To be able to install the dependencies and start the application locally, you will need to install yarn. Yarn is a package manager like npm.
-
-To install yarn, run the following command:
-<pre>npm install -g yarn</pre>
-
-For more information about yarn and other installation options, see the yarn documentation: https://yarnpkg.com/en/.
-
-###  <a name="dependencies"></a> 4. Install the project dependencies.
 
 <p>The following packages are dependencies to the project.<p>
 
@@ -236,80 +160,6 @@ For more information about yarn and other installation options, see the yarn doc
   <li><b>rebass</b> - library of UI components for React (https://www.npmjs.com/package/rebass)</li>
 </ul>
 
-<p>Version information for each of these packages is available in the <b>package.json</b> file in the project root directory and in the <b>client</b> directory.</p>
-
-<p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required packages:</p>
-<pre>yarn install</pre>
-
-<p>Change directory to the <b>MedLog/client</b> directory and run the following command to install the client dependencies.</p>
-
-<pre>yarn install</pre>
-
-###  <a name="install-mongo"></a> 5. Install MongoDB
-
-<p>For installation instructions, see <a href="https://github.com/philipstubbs13/coding-tips-tricks-resources/blob/master/MongoDB/Installing-MongoDB.md">Installing MongoDB</a>.</p>
-
-###  <a name="mongod"></a> 6. Start the daemon for MongoDB
-
-<p>Open another terminal window and run the following command to start the daemon process for MongoDB, which handles data requests, manages data access, and performs background management operations.</p>
-<pre>mongod</pre>
-
-<p><b>Note:</b> You want to keep the mongod process running in the background during development.</p>
-
-###  <a name="mongoshell"></a> 7. Start the MongoDB shell
-<p>In a separate terminal window, run the following command to start up the MongoDB shell.</p>
-<pre>mongo</pre>
-
-###  <a name="install-robo"></a> 8. Install Robo 3T
-
-<p>If you don't already have Robo 3T installed on your computer, you can install the latest version <a href="https://robomongo.org/download">here</a>.</p>
-
-<p>For this project, Robo 3T is similar to MySQL Workbench (if you are used to working with MySQL databases). Robo 3T is not required. But, similar to MySQL Workbench, it is a graphical user interface that is used to visually see the database and database collections (as opposed to using the command line interface for MongoDB).</p>
-
-### <a name="seed"></a> 9. Seed the database.
-<p>Run the following command from the project root directory (MedLog) to populate your local development database with dummy data.</p>
-<pre>yarn seed</pre>
-
-###  <a name="start-server"></a> 10. Start the Express server and React development server.
-<p>After performing all of the setup steps in the <b>Getting started</b> section, navigate to the project root directory (<b>MedLog</b>) and run the following command to start the Express server and React development server.</p>
-<pre>yarn start</pre>
-
-<p>After the development server has started, a Chrome browser window should open, and you should see the login screen for the application. If the browser does not automatically open after the server starts, you can verify that the application is working locally on your computer by opening Chrome and going to <a href="http://localhost:3000">http://localhost:3000</a>.
-
-## <a name="deployment"></a> Deploying the app
-
-This app is deployed to Heroku. To deploy the app, you will need to build a production version of the app as well as have Heroku CLI installed.
-
-1. Download and install the Heroku CLI. You can install the Heroku CLI <a href="https://devcenter.heroku.com/articles/heroku-cli">here</a>.</p>
-
-2. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
-<pre>heroku login</pre>
-
-3. Change directory to the project root directory (<b>MedLog</b>).
-
-4. If you have deployed the app before, delete the <b>MedLog/client/build</b> folder.
-
-5. Run the following command to build a production version of the app.
-<pre>yarn build</pre>
-<p>This command creates a folder called <b>build</b> inside of the <b>client</b> folder. </p>
-
-6. Deploy your changes
-<pre>
-git add .
-git commit -am "make it better"
-git push heroku master
-</pre>
-
-<p>If you run into any issues with deploying the app to Heroku, run the following command in the project root directory to see the Heroku logs.</p>
-<pre>heroku logs</pre>
-
-<p>There are also a lot of other resources, such as Stackoverflow and blog posts, that provide some useful information on deploying to Heroku. Here are just a few:</p>
-<ul>
-  <li>https://coursework.vschool.io/deploying-mern-with-heroku/</li>
-  <li>https://medium.com/@s1akr/deploying-a-mern-mongo-express-react-node-stack-web-app-on-to-heroku-d6a7745f88ba</li>
-  <li>https://github.com/nodejs/node-v0.x-archive/issues/6000</li>
-</ul>
-
 ## <a name="technologies-used"></a> Technologies used to create app
 
 * [Back end technolgies](#Backend)
@@ -322,7 +172,6 @@ git push heroku master
 * Express (<http://expressjs.com/>)
 * Mongoose ORM (<http://mongoosejs.com/>)
 * Javascript
-* AWS S3 Buckets (<https://aws.amazon.com/s3/>)
 
 ### <a name="Frontend"></a> Front end technologies
 
@@ -347,8 +196,3 @@ The following is a list of potential enhancements for future code development.
 * <b>Health goals</b> - Add page where you can set health goals for yourself and keep track of your progress, making it easier to accomplish your goals.
 
 * <b>Additional Charting Options</b> - Ability to chart blood pressure, blood sugar, and other important information that will help you and  your doctor better track your health. 
-
-## <a name ="Issues"></a> Issues
-
-<p>If you find an issue while using the app or have a request, <a href="https://github.com/philipstubbs13/MedLog/issues/" target="_blank">log the issue or request here</a>. These issues will be addressed in a future code update.</p>
-
