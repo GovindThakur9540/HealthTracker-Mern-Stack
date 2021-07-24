@@ -6,54 +6,10 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 
 * [About this project](#about-this-project)
   * [How the app is built](#how-the-app-is-built)
-  * [Structure of the project](#project-structure)
   * [App workflow](#workflow)
 * [Technologies used to create app](#technologies-used)
   * [Back end technologies](#Backend)
   * [Front end technologies](#Frontend)
-* [Direction for future development](#future)
-
-## <a name="screenshots"></a> Screenshots
-
-### Login page
-
-<img src="./readme_images/login.png">
-
-### Sign up page
-
-<img src="./readme_images/signup.png">
-
-### Home page
-
-<img src="./readme_images/home.png">
-
-### My health log
-
-<img src="./readme_images/my health log.png">
-
-### My symptom journal
-
-<img src="./readme_images/my symptom journal.png">
-
-### Appointments
-
-<img src="./readme_images/appointments.png">
-
-### Prescriptions
-
-<img src="./readme_images/prescriptions.png">
-
-### Doctors list
-
-<img src="./readme_images/doctors.png">
-
-### Clinics list
-
-<img src="./readme_images/clinics.png">
-
-### Charts
-
-<img src="./readme_images/charts.png">
 
 ## <a name="about-this-project"></a> About this project
 Many people visit the doctor office on a regular basis (sometimes multiple times per week) and have no way of accurately and efficiently keeping track of their health information, such as upcoming appointments, prescriptions, symptoms they experience away from the doctor office, notes from their doctors, and height and weight measurements. 
@@ -94,45 +50,6 @@ The Doctors and clinics page has contact information for each of your doctors, s
 
 #### Charts
 The Charts page includes two line graphs. The top graph displays your weight data over time. This data is pulled from the weight measurements you entered on the My health log page. The second graph is similar. It displays your height data over time.
-
-### <a name="project-structure"></a> Structure of the project
-
-After you clone the repository, navigate to the project root directory (MedLog). The project directory structure is set up as follows:
-
-* <b>client</b>
-  * <b>public</b>: The public folder contains the index.html file. This HTML file is a template. The file is empty. So, if you open it directly in a browser, you will get an empty page. Rather than placing the HTML code directly in index.html, this app uses a React component-based architecture to create, build, and render UI components to the page.
-  * <b>src</b>: The src folder is where the React app components reside.
-    * <b>assets</b>: Contains the images/icons used in the app.
-    * <b>index.js</b>: The index.js file is the top level file of the React app. In index.js, the App.js file is imported, and the ReactDOM.render method is used to render App.js to the page.
-    * <b>App.js</b>: The App.js file is where the app components are imported and rendered, such as the navigation bar, footer, and various pages.
-    * <b>Components</b>: The Components folder is where the app components that are reused across the app are located. Each file represents a separate component. For example, AppBar.js is the top navigation bar component.
-    * <b>containers</b>: Holds all the pages of the app and the child components within those pages. For example, inside of the containers folder, there is an Appointments folder. The Appointments folder contains a top-level parent container/page called Appointments.js that has two child containers (AppointmentsForm.js and AppointmentsList.js).
-    * <b>utils</b>: Contains all the axios requests used to get health information from the database.
-    * <b>App.css</b> and <b>index.css</b>: The external css stylesheets for the app.
-  * <b>package.json</b>: Lists the project dependencies and their version numbers.
-  * <b>yarn.lock</b>: Dependency tree for the project. Lists all the client dependencies and their versions.
-* <b>Controllers</b>: The controllers are the routes that are used to pass information to and from the view and model objects.
-* <b>models</b>: The models define the database schema or structure of the database.
-* <b>routes</b>: These files are the key to how the back end and front end can communicate with each other. They give the server a map of how to respond when users visit or request data from various URLs.
-* <b>scripts</b>
-  * <b>build.js</b>: Run <b>yarn build</b> in the project root directory to create a production build of the app, which you can use to deploy the app to Heroku.
-  * <b>seedDB.js</b>: Run <b>yarn seed</b> to populate your development database with information.
-  * <b>start-client</b>: Script used to start the React development server.
-* <b>.eslintrc.js</b>: List of rules and their definitions for ESLint.
-* <b>.gitignore</b>: Anything listed inside this file (for example, node_modules) will not be tracked by GitHub or Heroku when code is committed.
-* <b>package.json</b>: Lists the project dependencies and their version numbers. It also contains various scripts to start the server, create a production build, seed the database, etc.
-* <b>Procfile</b>: This file tells Heroku to run the server file with node once it's built.
-* <b>server.js</b>: This file does the following:
-  * Defines and requires the dependencies, including express, body-parser, and mongoose.
-  * Sets up the Express server to handle data parsing using body-parser.
-  * Points the server to the API routes, which gives the server a map of how to respond when users visit or request data from various URLs.
-  * Defines the port the server is listening on.
-  * Starts the server and React server.
-  * Allows the app to serve static content.
-  * Sets up Passport, which allows the user to authenticate/log in to the app.
-  * Uses Mongoose (orm) to connect to MongoDB, which allows us to have access to the MongoDB commands to perform various operations on the database.
-* <b>npm.lock</b>: Dependency tree for the project. Lists the project dependencies and their versions.
-
 
 <p>The following packages are dependencies to the project.<p>
 
@@ -180,19 +97,4 @@ After you clone the repository, navigate to the project root directory (MedLog).
 * Javascript
 * React (<https://reactjs.org/>)
 * Material UI Next (<https://material-ui-next.com/>)
-* FusionCharts (https://www.fusioncharts.com/)
-
-## <a name="future"></a> Direction for future development
-Source code will be developed over time to handle bug fixes and new features.
-
-The following is a list of potential enhancements for future code development.
-
-* <b>Physical activity</b> - Add page that allows users to track physical health information, such as heart rate, number of steps, distance, calories burned, etc.
-
-* <b>Allergy information</b> - Add page that allows users to keep a list of medicine and food allergies.
-
-* <b>Insurance</b> - Add page that has information about a user's insurance company, including company name, policy holder name, policy number, insurance company contact information, and comments.
-
-* <b>Health goals</b> - Add page where you can set health goals for yourself and keep track of your progress, making it easier to accomplish your goals.
-
-* <b>Additional Charting Options</b> - Ability to chart blood pressure, blood sugar, and other important information that will help you and  your doctor better track your health. 
+* FusionCharts (https://www.fusioncharts.com/) 
